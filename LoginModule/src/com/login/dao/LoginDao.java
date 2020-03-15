@@ -4,17 +4,17 @@ import java.sql.*;
 
 public class LoginDao {
 	
-	String sql = "SELECT * FROM LOGINUSERS where username=? and password=?";
-	String user = "vijay";
-	String pass = "vijay";
-	String url = "jdbc:oracle:thin:vijay@localhost:1521:xe";
+	String sql = "SELECT * FROM LOGINUSERS where UName=? and pass=?";
+	String user = "root";
+	String pass = "root";
+	String url = "jdbc:mysql://localhost:3306/student";
 	
 
 	public boolean Check(String uname, String pwd) {
 		try {
 
 			// step1 load the driver class
-			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Class.forName("com.mysql.jdbc.Driver");
 
 			// step2 create the connection object
 			Connection con = DriverManager.getConnection(url,user,pass);
